@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,7 +17,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Images (
 
-	val url : String,
-	val name : String,
-	val type : String
+	val url : String? = null,
+	val name : String? = null,
+	val type : String? = null
 ):Parcelable

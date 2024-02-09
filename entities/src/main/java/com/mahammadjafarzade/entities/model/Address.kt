@@ -1,3 +1,5 @@
+package com.mahammadjafarzade.entities.model
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,10 +18,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Address (
 
-	val address : String,
-	val zipCode : Int,
-	val country : Country,
-	val countryCode : String,
-	val town : Town,
-	val city : City
+	val address : String? = null,
+	val zipCode : Int? = null,
+	val country : Country? = null,
+	val countryCode : String? = null,
+	val town : Town? = null,
+	val city : City? = null
 ):Parcelable

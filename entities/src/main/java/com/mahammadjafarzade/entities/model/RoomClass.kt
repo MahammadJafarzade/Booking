@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,9 +17,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class RoomClass (
 
-	val code : String,
-	val description : String,
-	val refundable : Boolean,
-	val promotion : Boolean,
-	val offer : Boolean
+	val code : String? = null,
+	val description : String? = null,
+	val refundable : Boolean? = null,
+	val promotion : Boolean? = null,
+	val offer : Boolean? = null
 ):Parcelable

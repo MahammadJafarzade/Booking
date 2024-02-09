@@ -30,7 +30,7 @@ object ServiceModule {
     @HotelAnnotation
     fun provideApiClient(gson: Gson,@HotelAnnotation client : OkHttpClient) : Retrofit{
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://65a7624794c2c5762da692dd.mockapi.io/api/v1")
+            .baseUrl("https://65a7624794c2c5762da692dd.mockapi.io/api/v1/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
@@ -39,7 +39,6 @@ object ServiceModule {
 
     @Provides
     @Singleton
-    @HotelAnnotation
     fun provideApiService(@HotelAnnotation retrofit: Retrofit) : ApiService{
         return retrofit.create(ApiService::class.java)
     }

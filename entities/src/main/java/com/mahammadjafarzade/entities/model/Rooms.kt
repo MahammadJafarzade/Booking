@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,12 +17,12 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Rooms (
 
-	val reference : String,
-	val type : Type,
-	val images : List<Images>,
-	val offers : List<Offers>,
-	val facilities : List<String>,
-	val information : List<String>,
-	val alerts : List<String>,
-	val description : String
+	val reference : String? = null,
+	val type : Type? = null,
+	val images : List<Images>? = null,
+	val offers : List<Offers>? = null,
+	val facilities : List<String>? = null,
+	val information : List<String>? = null,
+	val alerts : List<String>? = null,
+	val description : String? = null
 ):Parcelable

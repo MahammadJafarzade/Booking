@@ -46,7 +46,7 @@ class LoginFragment : Fragment() {
         }
     }
     fun openApp(){
-        val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+        val action = LoginFragmentDirections.actionLoginFragmentToHotelsNavigation()
         findNavController().navigate(action)
     }
     fun openRegisterPage(){

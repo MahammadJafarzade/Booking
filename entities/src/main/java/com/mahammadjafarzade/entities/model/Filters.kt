@@ -1,3 +1,5 @@
+package com.mahammadjafarzade.entities.model
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -15,11 +17,11 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Filters (
 
-	val min : Min,
-	val max : Max,
-	val title : String,
-	val name : String,
-	val icon : String,
-	val type : String,
-	val items : List<String>
+	val min : Min? = null,
+	val max : Max? = null,
+	val title : String? = null,
+	val name : String? = null,
+	val icon : String? = null,
+	val type : String? = null,
+	val items : List<String>? = null
 ):Parcelable

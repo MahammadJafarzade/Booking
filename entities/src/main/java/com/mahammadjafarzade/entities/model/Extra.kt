@@ -1,3 +1,5 @@
+package com.mahammadjafarzade.entities.model
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,6 +18,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Extra (
 
-	val image_count : Int,
-	val thumbnailImage : String
+	val image_count : Int? = null,
+	val thumbnailImage : String? = null
 ):Parcelable

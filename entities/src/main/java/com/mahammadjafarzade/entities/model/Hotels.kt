@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,10 +17,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Hotels (
 
-	val id : Int,
-	val details : Details,
-	val rooms : List<Rooms>,
-	val cached : Boolean,
-	val df : Boolean,
-	val fc : Boolean
+	val id : Int? = null,
+	val details : Details? = null,
+	val rooms : List<Rooms>? = null,
+	val cached : Boolean? = null,
+	val df : Boolean? = null,
+	val fc : Boolean? = null
 ):Parcelable

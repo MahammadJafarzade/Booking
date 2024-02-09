@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -15,7 +16,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Offers (
 
-	val hotels : List<Hotels>,
-	val totalCount : Int,
-	val availableCount : Int
+	val hotels : List<Hotels>? = null,
+	val totalCount : Int? = null,
+	val availableCount : Int? = null
 ):Parcelable

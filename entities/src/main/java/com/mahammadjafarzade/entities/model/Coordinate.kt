@@ -1,3 +1,5 @@
+package com.mahammadjafarzade.entities.model
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,6 +18,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Coordinate (
 
-	val longitude : Double,
-	val latitude : Double
+	val longitude : Double? = null,
+	val latitude : Double? = null
 ):Parcelable

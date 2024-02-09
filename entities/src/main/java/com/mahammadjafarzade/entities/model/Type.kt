@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,8 +17,8 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Type (
 
-	val id : String,
-	val name : String,
-	val typeCode : String,
-	val characteristicCode : String
+	val id : String? = null,
+	val name : String? = null,
+	val typeCode : String? = null,
+	val characteristicCode : String? = null
 ):Parcelable

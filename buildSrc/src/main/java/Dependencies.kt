@@ -1,5 +1,5 @@
 object Versions {
-    const val androidApplication = "8.2.1"
+    const val androidApplication = "8.2.2"
     const val jetbrainsKotlinAndroid = "1.9.22"
     const val materialComponents = "1.11.0"
     const val hilt = "2.47"

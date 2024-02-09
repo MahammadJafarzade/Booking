@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,8 +17,8 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class SortingMethods (
 
-	val value : Int,
-	val text : String,
-	val default : Boolean,
-	val description : String
+	val value : Int? = null,
+	val text : String? = null,
+	val default : Boolean? = null,
+	val description : String? = null
 ):Parcelable

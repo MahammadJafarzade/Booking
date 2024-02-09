@@ -1,3 +1,4 @@
+package com.mahammadjafarzade.entities.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,11 +17,11 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Policies (
 
-	val checkin : Checkin,
-	val checkout : String,
-	val instructions : String,
-	val special_instructions : String,
-	val checkin_min_age : String,
-	val fees : Fees,
-	val know_before_you_go : String
+	val checkin : Checkin? = null,
+	val checkout : String? = null,
+	val instructions : String? = null,
+	val special_instructions : String? = null,
+	val checkin_min_age : String? = null,
+	val fees : Fees? = null,
+	val know_before_you_go : String? = null
 ):Parcelable

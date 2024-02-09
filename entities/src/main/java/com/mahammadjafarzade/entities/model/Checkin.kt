@@ -1,3 +1,5 @@
+package com.mahammadjafarzade.entities.model
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,6 +18,6 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Checkin (
 
-	val begin_time : String,
-	val end_time : String
+	val begin_time : String? = null,
+	val end_time : String? = null
 ):Parcelable

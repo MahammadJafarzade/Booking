@@ -1,3 +1,5 @@
+package com.mahammadjafarzade.entities.model
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -16,9 +18,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 @Parcelize
 data class Concept (
 
-	val code : Int,
-	val description : String,
-	val parentCode : String,
-	val conceptIconColorCode : String,
-	val conceptIcon : String
+	val code : Int? = null,
+	val description : String? = null,
+	val parentCode : String? = null,
+	val conceptIconColorCode : String? = null,
+	val conceptIcon : String? = null
 ):Parcelable
