@@ -2,6 +2,7 @@ package com.mahammadjafarzade.hotels.searchlist
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.mahammadjafarzade.common.base.BaseViewModel
 import com.mahammadjafarzade.common.flowState.Resource
 import com.mahammadjafarzade.common.flowState.State
 import com.mahammadjafarzade.domain.mapper.HotelResponseToUIStateMapper
@@ -16,8 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class SearchListViewModel @Inject constructor(
     val searchListUseCase: SearchListUseCase,
-    private val mapper: HotelResponseToUIStateMapper) : ViewModel() {
-    val state : MutableStateFlow<State?> = MutableStateFlow(null)
+    private val mapper: HotelResponseToUIStateMapper) : BaseViewModel() {
 
     val data = MutableLiveData<HotelSearchUIState?>()
 

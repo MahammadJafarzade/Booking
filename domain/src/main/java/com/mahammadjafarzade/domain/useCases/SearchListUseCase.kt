@@ -14,7 +14,7 @@ class SearchListUseCase @Inject constructor(
     suspend fun getList() = flow {
         emit(Resource.Loading())
         repository.getHotels()?.let {
-            emit(Resource.Success(it))
+            emit(Resource.Success( it))
         } ?: emit(Resource.Error("Empty message error"))
     }.catch { exception->
         emit(Resource.Error(exception.localizedMessage))

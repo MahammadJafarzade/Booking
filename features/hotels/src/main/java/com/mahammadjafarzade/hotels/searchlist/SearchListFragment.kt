@@ -3,50 +3,44 @@ package com.mahammadjafarzade.hotels.searchlist
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.mahammadjafarzade.common.flowState.Status
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.mahammadjafarzade.common.base.BaseFragment
 import com.mahammadjafarzade.hotels.databinding.FragmentSearchListBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class SearchListFragment : Fragment() {
-    lateinit var binding: FragmentSearchListBinding
+class SearchListFragment : BaseFragment <FragmentSearchListBinding, SearchListViewModel>(FragmentSearchListBinding::inflate) {
+
     val viewModel : SearchListViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentSearchListBinding.inflate(inflater)
-        return binding.root
-    }
+    private lateinit var adapter: SearchListAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initRvAdapter()
 
         lifecycleScope.launch {
             viewModel.getHotels()
         }
 
-        lifecycleScope.launch {
-            viewModel.state.collectLatest { state->
-//                when(it.status){
-//                    Status.SUCCESS -> showLoadingProgress(true)
-//                }
-            }
-        }
+
         viewModel.data.observe(viewLifecycleOwner){
-
+            adapter.setData(it?.hotels ?: listOf())
         }
     }
-    fun showLoadingProgress(isLoad : Boolean){
 
+    override fun mViewModel(): SearchListViewModel {
+        return viewModel
     }
-
+    private fun initRvAdapter(){
+        adapter = SearchListAdapter()
+        binding.recylerView.layoutManager = LinearLayoutManager(context)
+        binding.recylerView.adapter = adapter
+    }
 }

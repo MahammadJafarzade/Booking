@@ -24,7 +24,8 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
     private fun Result.getData() : List<HotelListUIModel>{
         return offers?.hotels?.map {
             HotelListUIModel(
-                name = it.details?.name ?: "",
+                enuId = it.details?.id ?:"",
+                name = it.details?.address?.address ?: "",
                 country = it.details?.description?:"")
         } ?: listOf()
     }
