@@ -2,8 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
-    id("com.google.dagger.hilt.android")
-    id("kotlin-kapt")
+    id(Plugins.kotlinKapt)
+    id(Plugins.hilt)
 
     id("kotlin-parcelize")
     id("androidx.navigation.safeargs.kotlin")
@@ -49,9 +49,11 @@ android {
 dependencies {
 
     implementation(project(":features:hotels"))
-    implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth")
+    implementation(project(":features:login"))
+    implementation(project(":features:register"))
+    implementation(project(":features:splash"))
+
+
 
     implementation("com.airbnb.android:lottie:6.3.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")

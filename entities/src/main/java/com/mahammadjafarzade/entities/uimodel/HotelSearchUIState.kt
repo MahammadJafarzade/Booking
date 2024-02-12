@@ -1,6 +1,5 @@
 package com.mahammadjafarzade.entities.uimodel
 
-import android.adservices.adid.AdId
 
 
 data class HotelSearchUIState(
@@ -12,7 +11,8 @@ data class SearchHeaderUiModel(
     val requestId: String
 )
 data class HotelListUIModel(
-    var enuId: String,
+    var enuId: Int,
+    var slug: String,
     var name: String,
     var country: String
 )

@@ -16,9 +16,13 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class SearchListFragment : BaseFragment <FragmentSearchListBinding, SearchListViewModel>(FragmentSearchListBinding::inflate) {
 
-    val viewModel : SearchListViewModel by viewModels()
+    private val viewModel : SearchListViewModel by viewModels()
 
     private lateinit var adapter: SearchListAdapter
+
+    override fun mViewModel(): SearchListViewModel {
+        return viewModel
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,9 +39,7 @@ class SearchListFragment : BaseFragment <FragmentSearchListBinding, SearchListVi
         }
     }
 
-    override fun mViewModel(): SearchListViewModel {
-        return viewModel
-    }
+
     private fun initRvAdapter(){
         adapter = SearchListAdapter()
         binding.recylerView.layoutManager = LinearLayoutManager(context)

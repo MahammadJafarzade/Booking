@@ -12,7 +12,7 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
     override fun map(input: Result): HotelSearchUIState {
         return HotelSearchUIState(
             header = input.getSearchHeader(),
-            hotels = input.getData()
+            hotels = input.getHotels()
         )
     }
     private fun Result.getSearchHeader() : SearchHeaderUiModel {
@@ -21,12 +21,13 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
             funnelId = funnelId ?:""
             )
     }
-    private fun Result.getData() : List<HotelListUIModel>{
+    private fun Result.getHotels() : List<HotelListUIModel>{
         return offers?.hotels?.map {
             HotelListUIModel(
-                enuId = it.details?.id ?:"",
-                name = it.details?.address?.address ?: "",
-                country = it.details?.description?:"")
+                enuId = it.id ?: 0,
+                name = it.details?.name ?: "",
+                slug = it.details?.slug ?: "",
+                country = it.details?.description ?:"")
         } ?: listOf()
     }
 }

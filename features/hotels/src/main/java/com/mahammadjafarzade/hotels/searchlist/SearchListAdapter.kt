@@ -53,6 +53,7 @@ class SearchListAdapter : RecyclerView.Adapter<SearchListViewHolder>() {
 
 class SearchListViewHolder(private val binding: ListItemHotelsBinding) : RecyclerView.ViewHolder(binding.root){
     fun bind(viewModel : HotelListUIModel){
-        binding.txt.text = viewModel.name
+        binding.txt.text = viewModel.slug
+        binding.text2.text = viewModel.name
     }
 }
