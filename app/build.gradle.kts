@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(Plugins.jetBrainsKotlin)
     id("com.google.gms.google-services")
     id(Plugins.kotlinKapt)
     id(Plugins.hilt)

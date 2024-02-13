@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.mahammadjafarzade.common.util.toLogin
+import com.mahammadjafarzade.entities.model.User
 import com.mahammadjafarzade.splash.SplashViewModel
 import com.mahammadjafarzade.splash.databinding.FragmentSplashBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,7 +39,7 @@ class SplashFragment : Fragment() {
             }
 
             override fun onAnimationEnd(animation: Animator) {
-               // openApp()
+                openApp()
             }
 
             override fun onAnimationCancel(animation: Animator) {
@@ -50,8 +52,8 @@ class SplashFragment : Fragment() {
         })
     }
 
-//    private fun openApp() {
-//        val action = SplashFragmentDirections.actionSplashFragmentToLoginFragment()
-//        findNavController().navigate(action)
-//    }
+    private fun openApp() {
+        val user = User("test")
+        findNavController().toLogin(user)
+    }
 }

@@ -13,3 +13,6 @@ data class HotelResponse (
 	val result : Result? = null,
 	val campaign_banners : Campaign_banners? = null
 ):Parcelable
+
+@Parcelize
+data class User(var name: String):Parcelable

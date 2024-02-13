@@ -44,6 +44,7 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":entities"))
 
+
     implementation(Libs.Hilt.hilt)
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")

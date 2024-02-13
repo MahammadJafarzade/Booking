@@ -23,5 +23,5 @@ data class Filters (
 	val name : String? = null,
 	val icon : String? = null,
 	val type : String? = null,
-	val items : List<String>? = null
+	//val items : List<String>? = null
 ):Parcelable

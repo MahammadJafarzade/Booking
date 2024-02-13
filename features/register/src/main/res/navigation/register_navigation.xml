@@ -5,6 +5,7 @@
     android:id="@+id/register_navigation"
     app:startDestination="@id/registerFragment">
 
+
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.mahammadjafarzade.booking.feature.register.RegisterFragment"
