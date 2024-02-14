@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.mahammadjafarzade.entities.uimodel.HotelListUIModel
 import com.mahammadjafarzade.hotels.databinding.ListItemHotelsBinding
 
@@ -53,7 +54,14 @@ class SearchListAdapter : RecyclerView.Adapter<SearchListViewHolder>() {
 
 class SearchListViewHolder(private val binding: ListItemHotelsBinding) : RecyclerView.ViewHolder(binding.root){
     fun bind(viewModel : HotelListUIModel){
-        binding.txt.text = viewModel.slug
-        binding.text2.text = viewModel.name
+        binding.txtTitle.text = viewModel.name
+        binding.txtAddress.text = viewModel.address
+        binding.txtPrice.text = "${viewModel.price} ₺"
+        binding.txtCity.text = "${viewModel.city} ,  ${viewModel.country}"
+        binding.txtStartRating.text = "${viewModel.reviewScore}".replace(".", ",")
+        binding.txtNear.text = "merkezine ${viewModel.cityCenterPointDistance} km"
+        val url = viewModel.thumbnailImage.replace("/0x0", "")
+        Glide.with(binding.root).load(url).into(binding.imageView)
+
     }
 }

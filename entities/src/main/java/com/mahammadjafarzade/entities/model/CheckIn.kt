@@ -5,9 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 
 @Parcelize
-data class Coordinate (
+data class CheckIn (
 
-  var longitude : Double? = null,
-  var latitude  : Double? = null
+  var beginTime : String? = null,
+  var endTime   : String? = null
 
 ) : Parcelable

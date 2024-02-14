@@ -26,8 +26,16 @@ class HotelResponseToUIStateMapper @Inject constructor() : BaseMapper<Result, Ho
             HotelListUIModel(
                 enuId = it.id ?: 0,
                 name = it.details?.name ?: "",
-                slug = it.details?.slug ?: "",
-                country = it.details?.description ?:"")
+                address = it.details?.address?.address ?: "",
+                city = it.details?.address?.city?.name ?: "",
+                country = it.details?.description ?:"",
+                cityCenterPointDistance = it.details?.cityCenterPointDistance ?: 0.0,
+                reviewScore = it.details?.reviewScore?.toDouble() ?: 0.0,
+                image = it.details?.images?.firstOrNull()?.toString() ?: "",
+                thumbnailImage = it.details?.extra?.thumbnailImage?: "",
+                price = it.rooms?.firstOrNull()?.offers?.firstOrNull()?.price ?: 0
+            )
         } ?: listOf()
+
     }
 }

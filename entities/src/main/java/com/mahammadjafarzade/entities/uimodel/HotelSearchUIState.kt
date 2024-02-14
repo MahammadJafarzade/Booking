@@ -1,5 +1,7 @@
 package com.mahammadjafarzade.entities.uimodel
 
+import com.mahammadjafarzade.entities.model.Address
+import com.mahammadjafarzade.entities.model.City
 
 
 data class HotelSearchUIState(
@@ -12,7 +14,13 @@ data class SearchHeaderUiModel(
 )
 data class HotelListUIModel(
     var enuId: Int,
-    var slug: String,
     var name: String,
-    var country: String
+    var address: String,
+    var city: String,
+    var country: String,
+    val reviewScore: Double,
+    val cityCenterPointDistance: Double,
+    val image: String,
+    val thumbnailImage: String,
+    val price: Int
 )

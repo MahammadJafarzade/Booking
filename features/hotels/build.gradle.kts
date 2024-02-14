@@ -44,6 +44,8 @@ dependencies {
 
     implementation(Libs.Hilt.hilt)
     kapt(Libs.Hilt.hiltKapt)
+    implementation(Libs.GLIDE.glide)
+
 
     implementation(Libs.Navigation.navigationUi)
     implementation(Libs.Navigation.navigationFragment)
