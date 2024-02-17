@@ -6,7 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashViewModel @Inject constructor(private val preferences: com.mahammadjafarzade.common.util.MySharedPreferencesInterface) : ViewModel()  {
+class SplashViewModel @Inject constructor(private val preferences:MySharedPreferencesInterface) : ViewModel()  {
     fun saveIntroPassed(){
         preferences.saveString("intro","1")
     }

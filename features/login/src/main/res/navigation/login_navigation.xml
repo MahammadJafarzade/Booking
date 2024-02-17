@@ -12,12 +12,6 @@
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
 
-        <argument
-            android:name="user"
-            app:argType="com.mahammadjafarzade.entities.model.User"
-            app:nullable="true"
-            ></argument>
-
         <deepLink app:uri="booking://login/"></deepLink>
     </fragment>
 </navigation>

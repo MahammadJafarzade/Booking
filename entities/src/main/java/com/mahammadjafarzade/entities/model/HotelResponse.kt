@@ -15,3 +15,4 @@ data class HotelResponse (
 ) : Parcelable
 @Parcelize
 data class User(var name: String):Parcelable
+

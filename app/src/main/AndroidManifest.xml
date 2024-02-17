@@ -24,17 +24,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
-            <intent-filter
-                android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:host="booking"
-                    android:pathPrefix="/Login/"
-                    android:scheme="https"
-                    ></data>
-            </intent-filter>
+<!--            <intent-filter-->
+<!--                android:autoVerify="true">-->
+<!--                <action android:name="android.intent.action.VIEW"/>-->
+<!--                <category android:name="android.intent.category.DEFAULT"/>-->
+<!--                <category android:name="android.intent.category.BROWSABLE"/>-->
+<!--                <data-->
+<!--                    android:host="booking"-->
+<!--                    android:pathPrefix="/Login/"-->
+<!--                    android:scheme="https"-->
+<!--                    ></data>-->
+<!--                <data-->
+<!--                    android:host="booking"-->
+<!--                    android:pathPrefix="/Hotel/"-->
+<!--                    android:scheme="https"-->
+<!--                    ></data>-->
+<!--                <data-->
+<!--                android:host="booking"-->
+<!--                android:pathPrefix="/Register/"-->
+<!--                android:scheme="https"-->
+<!--                ></data>-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 

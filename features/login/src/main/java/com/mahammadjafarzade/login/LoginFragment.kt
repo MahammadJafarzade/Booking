@@ -6,19 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.firebase.Firebase
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.auth
+import com.mahammadjafarzade.common.util.toHotel
+import com.mahammadjafarzade.common.util.toRegister
+import com.mahammadjafarzade.entities.model.User
 import com.mahammadjafarzade.login.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     lateinit var binding : FragmentLoginBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +28,7 @@ class LoginFragment : Fragment() {
             loginEmail()
         }
         binding.registerButton.setOnClickListener{
-           // openRegisterPage()
+            openRegisterPage()
         }
         // Inflate the layout for this fragment
         return (binding.root)
@@ -40,16 +39,13 @@ class LoginFragment : Fragment() {
             binding.usernameEditText.text.toString(),
             binding.passwordEditText.text.toString()
         ).addOnSuccessListener {
-           // openApp()
+            openApp()
         }.addOnFailureListener{
         }
     }
-//    fun openApp(){
-//        val action = LoginFragmentDirections.actionLoginFragmentToHotelsNavigation()
-//        findNavController().navigate(action)
-//    }
-//    fun openRegisterPage(){
-//        val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
-//        findNavController().navigate(action)
-//    }
+    fun openApp(){
+        findNavController().toHotel()
+    }
+    fun openRegisterPage(){
+        findNavController().toRegister() }
 }

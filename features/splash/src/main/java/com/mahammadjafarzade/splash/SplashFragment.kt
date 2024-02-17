@@ -53,7 +53,6 @@ class SplashFragment : Fragment() {
     }
 
     private fun openApp() {
-        val user = User("test")
-        findNavController().toLogin(user)
+        findNavController().toLogin()
     }
 }

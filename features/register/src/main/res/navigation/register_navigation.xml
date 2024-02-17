@@ -11,4 +11,6 @@
         android:name="com.mahammadjafarzade.booking.feature.register.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register"/>
+
+    <deepLink app:uri="booking://register/"></deepLink>
 </navigation>

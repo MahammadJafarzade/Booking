@@ -11,4 +11,7 @@
         android:label="fragment_search_list"
         tools:layout="@layout/fragment_search_list"/>
 
+    <deepLink
+        app:uri="booking://hotel/"></deepLink>
+
 </navigation>

@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
+import com.mahammadjafarzade.common.util.toLogin
+import com.mahammadjafarzade.entities.model.User
 import com.mahammadjafarzade.register.databinding.FragmentRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +28,6 @@ class RegisterFragment : Fragment() {
         binding.registerButton.setOnClickListener{
             register()
         }
-        // Inflate the layout for this fragment
         return (binding.root)
     }
     fun register(){
@@ -35,7 +36,7 @@ class RegisterFragment : Fragment() {
             binding.emailEditText.text.toString(),
             binding.registerPasswordEditText.text.toString()
         ).addOnSuccessListener {
-            findNavController().popBackStack()
+            findNavController().toLogin()
         }.addOnFailureListener{
 
         }
