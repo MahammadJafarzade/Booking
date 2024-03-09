@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
-open abstract class BaseFragment<B : ViewBinding, V : BaseViewModel>(private val inflate: Inflate<B>) : Fragment() {
+open abstract class     BaseFragment<B : ViewBinding, V : BaseViewModel>(private val inflate: Inflate<B>) : Fragment() {
 
     private lateinit var loadingDialog : LoadingDialog
     private var _binding : ViewBinding? = null
